@@ -7,7 +7,7 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { runDbTests } from "@/db/testRunner";
+import { runStoreTests } from "@/store/storeTestRunner";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     if (hasRunTests.current) return;
     hasRunTests.current = true;
-    runDbTests().catch(console.error);
+    runStoreTests().catch(console.error);
   }, []);
 
   return (
