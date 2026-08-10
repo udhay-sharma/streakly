@@ -6,21 +6,24 @@ import {
  
   Settings,
 } from "lucide-react-native";
+import { useTheme } from "@/hooks/use-theme";
 
 export default function TabsLayout() {
+  const { colors } = useTheme();
+
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
 
         tabBarStyle: {
-          backgroundColor: "#0B0F14",
-          borderTopColor: "#1F2937",
+          backgroundColor: colors.background,
+          borderTopColor: colors.border,
           height: 70,
         },
 
-        tabBarActiveTintColor: "#6366F1",
-        tabBarInactiveTintColor: "#9CA3AF",
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.textSecondary,
       }}
     >
       <Tabs.Screen
